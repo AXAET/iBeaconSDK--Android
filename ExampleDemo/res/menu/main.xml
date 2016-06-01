@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.axaet.ibeacondemo.MainActivity" >
+
+    <item
+        android:id="@+id/action_stratscan"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_startscan"/>
+    <item
+        android:id="@+id/action_stopscan"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_stopscan"/>
+
+</menu>

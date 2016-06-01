@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IBeaconDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_startscan">startscan</string>
+    <string name="action_stopscan">stopscan</string>
+    <string name="not_supported_ble">Low power Bluetooth is not supported</string>
+    <string name="action_connect">connect</string>
+    <string name="action_disconnect">disconnect</string>
+
+</resources>
