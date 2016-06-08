@@ -121,6 +121,14 @@ public class BluetoothLeService extends Service {
 				broadcastUpdate(characteristic);
 			}
 		}
+		
+		@Override
+		public void onReadRemoteRssi(BluetoothGatt gatt, int rssi, int status) {
+			super.onReadRemoteRssi(gatt, rssi, status);
+			if (status == BluetoothGatt.GATT_SUCCESS) {
+				// Can get rssi here
+			}
+		}
 
 	};
 
@@ -401,6 +409,19 @@ public class BluetoothLeService extends Service {
 		data[6] = (byte) (period / 256);
 		data[7] = (byte) (period % 256);
 		sendDataToDevice(data);
+	}
+
+
+/**
+	 * read rssi
+	 * 
+	 * @return
+	 */
+	public boolean readRssi() {
+		if (mBluetoothGatt != null) {
+			return mBluetoothGatt.readRemoteRssi();
+		}
+		return false;
 	}
 
 	/**
