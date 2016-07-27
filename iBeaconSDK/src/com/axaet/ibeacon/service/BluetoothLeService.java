@@ -236,8 +236,8 @@ public class BluetoothLeService extends Service {
 		if (mBluetoothAdapter == null || mBluetoothGatt == null) {
 			return;
 		}
-		mBluetoothGatt.close();
 		mBluetoothGatt.disconnect();
+		mBluetoothGatt.close();
 		mBluetoothGatt = null;
 	}
 
@@ -280,6 +280,9 @@ public class BluetoothLeService extends Service {
 	 * Notication
 	 */
 	private void enableNotication() {
+		if(mBluetoothGatt==null){
+			return;
+		}
 		BluetoothGattService bluetoothService = mBluetoothGatt.getService(UUIDUtils.UUID_SERVICE);
 		if (bluetoothService == null) {
 			return;
